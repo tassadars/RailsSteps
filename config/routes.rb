@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   get 'home/index'
 
+  # not right
+  #get 'terms' => 'pages#terms'
+  #get 'about' => 'pages#about'
 
   # First variant
-  #get 'contacts' => 'contacts#new'
-  #resource :contacts, only: [:create]
+  # get 'contacts' => 'contacts#new'
+  # resource :contacts, only: [:create]
   
   # Second variant (primary)
   resource :contacts, only: [:new, :create], path_names: {:new => ''}
