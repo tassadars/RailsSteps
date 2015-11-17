@@ -6,7 +6,11 @@ class ContactsController < ApplicationController
   def create
     # we change params[:contact] to contact_params. Receive params from browser in safe way
     @contact = Contact.new(contact_params)    
-    @contact.save
+    if @contact.valid?
+      @contact.save
+    else
+      render action: 'new'
+    end
   end
 
   private
