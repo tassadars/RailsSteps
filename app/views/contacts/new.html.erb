@@ -2,6 +2,15 @@
 <% #possible to use variable article_path instead %>
 <%= form_for :contact, url: contacts_path do |f| %>
 	<p>
+	<% if @contact && @contact.errors.any? %>
+		<ul>
+		<% @contact.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+		</ul>
+	<% end %>
+	</p>
+	<p>
 		<%= f.label :email %><br/>
 		<%= f.text_field :email %>
 	</p>
