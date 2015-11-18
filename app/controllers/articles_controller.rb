@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)    
     if @article.valid?
       @article.save
+      redirect_to @article # it automatically decide where to redirect, now it's #show
     else
       render action: 'new'
     end
