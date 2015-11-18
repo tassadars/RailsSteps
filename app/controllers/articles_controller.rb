@@ -3,6 +3,11 @@ class ArticlesController < ApplicationController
   def new
   end
 
+  def show
+    @article = Article.find(params[:id])
+    
+  end
+
   def create
     # we change params[:contact] to contact_params. Receive params from browser in safe way
     @article = Article.new(article_params)    
