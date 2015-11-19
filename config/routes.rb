@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # Second variant (primary)
   resource :contacts, only: [:new, :create], path_names: {:new => ''}
   
-
+  # it will create comments routes for each article!!!  
   resources :articles do
     resources :comments
   end
