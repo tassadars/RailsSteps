@@ -1,8 +1,10 @@
+<h2>Article</h2>
 <h1><%= @article.title %></h1>
 <p>
 	<%= @article.text %>
 </p>
 
+<h2>Comments</h2>
 <% @article.comments.each do |comment| %>
 	<hr />
 	<h4>
@@ -15,6 +17,7 @@
 <% end %>
 <hr />
 
+<h2>Add comment</h2>
 <% @comment = @article.comments.build %>
 <%= form_for ([@article, @comment]) do |f| %>
 	<p>
