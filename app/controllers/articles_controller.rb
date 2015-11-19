@@ -39,8 +39,9 @@ class ArticlesController < ApplicationController
      if @article = Article.find(params[:id])
       @article.destroy
       
-      @articles = Article.all
-      render action: 'index'
+     #@articles = Article.all
+     #render action: 'index'
+     redirect_to articles_path
     end
   end
   
