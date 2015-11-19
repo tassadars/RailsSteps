@@ -34,6 +34,15 @@ class ArticlesController < ApplicationController
       render action: 'edit'
     end
   end
+
+   def destroy
+     if @article = Article.find(params[:id])
+      @article.destroy
+      
+      @articles = Article.all
+      render action: 'index'
+    end
+  end
   
   private
 
