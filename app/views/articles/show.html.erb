@@ -3,6 +3,18 @@
 	<%= @article.text %>
 </p>
 
+<% @article.comments.each do |comment| %>
+	<hr />
+	<h4>
+		<%= comment.author %> <%= comment.created_at %>
+	</h4>
+
+	<p>
+		<%= comment.body %>
+	</p>
+<% end %>
+<hr />
+
 <% @comment = @article.comments.build %>
 <%= form_for ([@article, @comment]) do |f| %>
 	<p>
