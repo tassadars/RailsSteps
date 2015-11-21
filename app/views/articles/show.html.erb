@@ -20,10 +20,6 @@
 <h2>Add comment</h2>
 <% @comment = @article.comments.build %>
 <%= form_for ([@article, @comment]) do |f| %>
-	<p>
-		<%= f.label :author %><br/>
-		<%= f.text_field :author %>
-	</p>
 
 	<p>
 		<%= f.label :body %><br/>

@@ -5,10 +5,11 @@ class CommentsController < ApplicationController
   def create
     @article = Article.find(params[:article_id])
 
-    # we don't assign, because in this cace, no need.
-    # @comment = @article.comments.create(comment_params)
-    @article.comments.create(comment_params)
+    @comment = @article.comments.new(comment_params)
 
+    @comment.author = current_user.username
+
+    @comment.save
     redirect_to article_path(@article)
   end
 
