@@ -15,7 +15,8 @@ class ArticlesController < ApplicationController
 
   def create
     # we change params[:contact] to contact_params. Receive params from browser in safe way
-    @article = Article.new(article_params)    
+    @article = Article.new(article_params)  
+    @article.title = current_user.username  
     if @article.save #autocheck validation, no need to .valid?
       redirect_to @article # it automatically decide where to redirect, now it's #show
     else
