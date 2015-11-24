@@ -31,10 +31,15 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    if @article.update(article_params) #autocheck validation, no need to .valid?
-      redirect_to @article # it automatically decide where to redirect, now it's #update
+    if @article.title == current_user.username
+      if @article.update(article_params) #autocheck validation, no need to .valid?
+        redirect_to @article # it automatically decide where to redirect, now it's #update
+      else
+        render action: 'edit'
+      end
     else
-      render action: 'edit'
+      # Warning hack attack (article id change)
+      redirect_to cheat_path
     end
   end
 

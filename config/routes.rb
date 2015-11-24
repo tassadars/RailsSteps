@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'terms' => 'pages#terms'
   get 'about' => 'pages#about'
+  get 'cheat' => 'pages#cheat'
+
 
   # First variant
   # get 'contacts' => 'contacts#new'
