@@ -37,10 +37,10 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
            <% if user_signed_in? %>
-            <%= current_user.username %> 
-            <%= link_to 'Sign Out',  destroy_user_session_path, method: :delete  %>
+            <li><a><%= current_user.username %></a></li> 
+            <li><%= link_to 'Sign Out',  destroy_user_session_path, method: :delete  %></li>
            <% else %>
-            <%= link_to 'Sign In', new_user_session_path %> 
+            <li><%= link_to 'Sign In', new_user_session_path %></li> 
            <% end %>
         </li>
       </ul>
