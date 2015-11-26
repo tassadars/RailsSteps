@@ -25,6 +25,7 @@ en:
   contacts:
     contact_us: "Contact Us!"
     thanks: "Thanks!"
+    send_message: "Send message"
 
   articles:
     new_article: "New article!"
