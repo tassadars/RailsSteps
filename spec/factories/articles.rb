@@ -1,7 +1,7 @@
 FactoryGirl.define do 
   factory :article do
-    title "Article title"
-    text "Atricle text"
+    title "Article title@"
+    text "Article text!!!"
 
     # create factory with name article_with_comments for creation article with few comments 
     factory :article_with_comments do
